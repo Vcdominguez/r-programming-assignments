@@ -1,2 +1,4 @@
 # r-programming-assignments
-Valerie Dominguez Course number (e.g., LIS6371) Brief description (“Repository for R Programming Assignments”)
+Valerie Dominguez 
+Course number: LIS4370.001
+Description: Repository for R Programming Assignments
