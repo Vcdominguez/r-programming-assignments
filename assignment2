@@ -1,0 +1,5 @@
+https://vdominguezf26.blogspot.com/2026/09/module-2-assignment-importing-data-and.html
+myMean <- function(assignment2) {
+  return(sum(assignment2) / length(assignment2))
+}
+myMean(assignment2)
