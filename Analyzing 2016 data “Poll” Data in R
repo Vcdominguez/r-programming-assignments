@@ -25,3 +25,4 @@ ggplot(df_polls, aes(x=ABC_poll, y=Name))+
 ggplot(df_polls, aes(x=Diff, y=Name, Title="ABC_Poll Data"))+
   geom_bar(stat = "identity", color="Pink")+
   coord_flip()
+#BlogLink:https://vdominguezf26.blogspot.com/2026/09/assignment-3-analyzing-2016-data-poll.html
