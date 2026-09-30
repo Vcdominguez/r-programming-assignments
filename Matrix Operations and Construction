@@ -14,3 +14,4 @@ D <- diag(c(4, 1, 2, 3))
 C <- cbind(c(3,2,2,2,2),
            rbind(c(1,1,1,1),
                  diag(3, 4)))
+Blog:https://vdominguezf26.blogspot.com/2026/09/assignment-6-matrix-operations-and.html
