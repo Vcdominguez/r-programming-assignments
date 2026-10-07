@@ -1,0 +1,32 @@
+#1. Choose or Download Data
+data("mtcars")
+head(mtcars)
+str(mtcars)
+#2. Test Generic Functions
+print(mtcars)
+summary(mtcars)
+plot(mtcars)
+plot(mtcars$mpg)
+#3. Explore S3 vs. S4
+#s3
+s3_obj <- list(name = "Myself", age = 29, GPA = 3.5)
+class(s3_obj) <- "student_s3"
+print(s3_obj)
+#s4
+setClass("student_s4",
+         slots = c(name = "character", age = "numeric", GPA = "numeric"))
+s4_obj <- new("student_s4", name = "Myself", age = 29, GPA = 3.5)
+print(s4_obj)
+
+#Discussion:
+
+#How can you tell if an object uses S3 or S4? What are the principal differences?
+#S3 is an older, simpler, and more flexible object-oriented system in R. It uses single dispatch, meaning the method that is called depends on the class of the object. S3 classes lack a formal, predefined structure. Essentially, a list with its class attribute set to a class name becomes an S3 object, and the list's components act as the object's member variables. S3 methods can work with many different data types through generic functions such as plot(), print(), and summary().
+#S4, on the other hand, is a safer and more structured object-oriented system in R with stricter error checking and multiple dispatch. S4 classes are defined using setClass(), where member variables, called slots, and their data types are specified. S4 objects are then created using the new() function, and their classes are not easily changed.
+
+#What is a generic function in R?
+#A generic function chooses which method to use based on an object’s class, such as plot(), mean(), or summary(). The generic itself does not perform the calculation; the method is the class-specific implementation that does the actual work.
+
+#How do you determine an object’s underlying type (e.g., integer vs. list)?
+#In R, objects can have different classes, modes, and underlying types. The class() function describes what kind of object it is and how R treats it, while mode() describes its general storage mode. The typeof() function gives a more specific description of how the object is stored internally, such as an integer, character, or list. Functions like is.character() and is.vector() can also be used to test whether an object belongs to a specific type.
+#Blog:https://vdominguezf26.blogspot.com/2026/10/assignment-7-exploring-rs.html
