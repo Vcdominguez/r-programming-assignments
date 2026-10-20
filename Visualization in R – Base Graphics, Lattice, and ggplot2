@@ -1,0 +1,43 @@
+#Choosing my Dataset 
+data("TeachingRatings", package = "AER")
+head(TeachingRatings)
+
+#Base R Graphics
+# Scatter plot
+plot(TeachingRatings$eval, TeachingRatings$beauty,
+     main   = "Evaluation in relation to Beauty",
+     xlab   = "Evaluation Score",
+     ylab   = "Beauty Rating") 
+     
+# Histogram
+hist(TeachingRatings$age,
+     main   = "Distribution of Sample's age",
+     xlab   = "age")
+
+library(lattice)
+
+# Conditional scatter plot (small multiples)
+xyplot(beauty ~ age | factor(gender),
+       data = TeachingRatings,
+       main = "Lattice: Beauty vs. Age by Gender")
+
+# Box-and-whisker plot
+bwplot(beauty ~ factor(gender),
+       data = TeachingRatings,
+       main = "Lattice: Beauty by gender")
+
+library(ggplot2)
+
+# Scatter plot with smoothing
+ggplot(TeachingRatings, aes(x = eval, y = beauty, color = factor(gender))) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "ggplot2: Beauty vs. Evaluation with trend by gender")
+
+# Faceted histogram
+ggplot(TeachingRatings, aes(x=eval)) +
+  geom_histogram(binwidth = 0.5, fill = "lightblue", color="black") +
+  facet_wrap(~ minority) +
+  labs(title = "ggplot2: Evaluation scores by Minority Status")
+
+#Blog:https://vdominguezf26.blogspot.com/2026/10/assignment-9-visualization-in-r-base.html
