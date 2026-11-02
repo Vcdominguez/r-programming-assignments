@@ -1,0 +1,10 @@
+install.packages("devtools")
+library(devtools)
+create_package("Friedman")
+file.edit("Friedman/DESCRIPTION")
+check("Friedman")
+build("Friedman")
+
+pkgbuild::check_build_tools(debug = TRUE)
+
+#Blog: https://vdominguezf26.blogspot.com/2026/11/building-your-own-r-package.html
