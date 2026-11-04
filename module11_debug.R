@@ -39,3 +39,5 @@ corrected_tukey <- function(x) {
 }
 
 corrected_tukey(test_mat)
+
+#Blog: https://vdominguezf26.blogspot.com/2026/11/debugging-and-defensive-programming-in-r.html
