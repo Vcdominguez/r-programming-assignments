@@ -67,6 +67,8 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 Based on the scatterplot, there appears to be a negative relationship between vehicle weight and fuel efficiency. As the weight of a car increases, its miles per gallon generally decreases. This suggests that heavier cars tend to use more fuel than lighter cars.
 
+Blog: https://vdominguezf26.blogspot.com/2026/11/introduction-to-r-markdown.html
+
 ## Reflection
 
 Using R Markdown is different from writing a regular report because I can combine my explanations, code, and results in one place. Instead of copying graphs and statistics into a separate document, R Markdown allows me to generate everything together. I also like that I can make changes to my code and update the report by knitting it again. Although learning the formatting takes some practice, I think R Markdown is useful for organizing data analysis projects and making reports more reproducible.
