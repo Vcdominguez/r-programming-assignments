@@ -1,0 +1,73 @@
+---
+title: "My R Markdown Primer"
+author: "Valerie Dominguez"
+date: "2026-11-13"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+R Markdown is a file format for making dynamic documents with R. An R Markdown document is written in markdown (an easy-to-write plain text format) and contains chunks of embedded R code.
+
+## Exploring the Data 
+
+For this example, I will use the built-in `mtcars` dataset in R. This dataset contains information about different cars, including their fuel efficiency, horsepower, and weight. I want to explore the relationship between a car's weight and its miles per gallon (MPG).
+
+## Loading and Summarizing the Dataset
+
+The following code loads the dataset and calculates basic summary statistics.
+
+```{r cars}
+data(mtcars)
+
+head(mtcars)
+
+summary(mtcars$mpg)
+
+mean(mtcars$mpg)
+```
+## Mathematical Expression
+
+The mean is calculated by adding all observations and dividing by the total number of observations.
+
+The formula for the mean is:
+
+$$
+\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}
+$$
+
+In this equation, $\bar{x}$ represents the mean, $x_i$ represents each observation, and $n$ represents the number of observations.
+
+Another example of an inline mathematical expression is $\alpha + \beta = \gamma$.
+
+## Data Visualization
+
+Next, I will create a scatterplot using `ggplot2` to explore the relationship between vehicle weight and fuel efficiency.
+
+```{r mtcars, echo=FALSE}
+library(ggplot2)
+
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point(color = "blue") +
+  labs(
+    title = "Car Weight vs. Fuel Efficiency",
+    x = "Weight (1000 lbs)",
+    y = "Miles Per Gallon"
+  ) +
+  theme_minimal()
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Analysis
+
+Based on the scatterplot, there appears to be a negative relationship between vehicle weight and fuel efficiency. As the weight of a car increases, its miles per gallon generally decreases. This suggests that heavier cars tend to use more fuel than lighter cars.
+
+## Reflection
+
+Using R Markdown is different from writing a regular report because I can combine my explanations, code, and results in one place. Instead of copying graphs and statistics into a separate document, R Markdown allows me to generate everything together. I also like that I can make changes to my code and update the report by knitting it again. Although learning the formatting takes some practice, I think R Markdown is useful for organizing data analysis projects and making reports more reproducible.
+
